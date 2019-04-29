@@ -23,7 +23,9 @@ span {
 
 p {
   font-size: 0.973125em;
-  line-height: 1.75em; }
+  line-height: 1.75em;
+  letter-spacing: 1.1px;
+  margin: 50px 0; }
 
 a, input, textarea {
   font-size: 1.035625em; }
@@ -39,7 +41,8 @@ a {
 
 .grid-item-1 {
   background-image: url("../img/1.jpg");
-  grid-area: a; }
+  grid-area: a;
+  padding: 0; }
 
 .grid-item-2 {
   background-color: #f3f3f3;
@@ -55,9 +58,7 @@ a {
     .grid-item-2 button:active, .grid-item-2 button:focus {
       outline: none; }
   .grid-item-2 h4 {
-    margin: 70px 0; }
-  .grid-item-2 p {
-    margin-bottom: 50px; }
+    margin: 70px 0 0; }
 
 .grid-item-3 {
   background-image: url("../img/3.jpg");
@@ -83,13 +84,17 @@ a {
     width: 90px;
     height: 90px;
     border-radius: 10px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    margin-top: 260px; }
+  .grid-item-6 p {
+    margin-top: 10px; }
 
 .grid-item-7 {
   background-image: url("../img/6.jpg");
   grid-area: g;
   padding-top: 68px; }
   .grid-item-7 .form {
+    margin: 60px 0;
     max-width: 620px;
     display: flex;
     flex-wrap: wrap;
@@ -143,15 +148,7 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 57px 54px; }
-  .grid-item-1 p,
-  .grid-item-2 p,
-  .grid-item-3 p,
-  .grid-item-4 p,
-  .grid-item-5 p,
-  .grid-item-6 p,
-  .grid-item-7 p {
-    margin: 50px 0; }
+  padding: 57px 54px 25px; }
 
 .grid-item-3,
 .grid-item-5,
@@ -163,6 +160,15 @@ a {
   max-width: 1366px;
   margin: 0 auto;
   display: grid;
+  grid-template-columns: 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11%;
   grid-template-areas: "a a a a a a b b b" "c c c c d d d d d" "c c c c e e e e e" "f f f g g g g g g"; }
+
+@media screen and (max-width: 720px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "a" "b" "c" "d" "e" "f" "g"; }
+    .grid .grid-item-1 {
+      display: none; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  text-align: center;
+  //text-align: center;
 }
 
 body {
@@ -20,46 +20,216 @@ h3 {
 h4 {
   font-size: 2.5em;
 }
-
-.header {
-  grid-area: header;
-  background-color: red;
+h2, h3, h4 {
+  font-weight: 200;
+}
+span {
+  font-weight: 900;
+}
+p {
+  font-size: 0.973125em;
+  line-height: 1.75em;
+  letter-spacing: 1.1px;
+  margin: 50px 0;
 }
 
-.main {
-  grid-area: main;
-  background-color: green;
+a, input, textarea {
+  font-size: 1.035625em;
 }
 
-.left {
-  grid-area: left;
-  background-color: yellowgreen;
+a {
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 15px 40px;
+  display: inline-block;
+  text-align: center;
 }
 
-.right {
-  grid-area: right;
-  background-color: blueviolet;
+.grid-item-1 {
+  background-image: url("../img/1.jpg");
+  grid-area: a;
+  padding: 0;
 }
 
-.footer {
-  grid-area: footer;
-  background-color: aquamarine;
+.grid-item-2 {
+  background-color: #f3f3f3;
+  grid-area: b;
+
+  button {
+    background-image: url(../img/icons/menu.svg);
+    width: 33px;
+    height: 33px;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active, &:focus {
+      outline: none;
+    }
+  }
+
+  h4 {
+    margin: 70px 0 0;
+  }
 }
 
-.container {
+.grid-item-3 {
+  background-image: url("../img/3.jpg");
+  grid-area: c;
+}
+
+.grid-item-4 {
+  background-image: url("../img/2.jpg");
+  grid-area: d;
+  a {
+    color: #000;
+    border-color: #000;
+  }
+}
+
+.grid-item-5 {
+  background-image: url("../img/4.jpg");
+  grid-area: e;
+}
+
+.grid-item-6 {
+  background-image: url("../img/5.jpg");
+  grid-area: f;
+
+  .logo {
+    display: block;
+    background-image: url("../img/icons/logo.png");
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 260px;
+  }
+  p {
+    margin-top: 10px;
+  }
+}
+
+.grid-item-7 {
+  background-image: url("../img/6.jpg");
+  grid-area: g;
+  padding-top: 68px;
+
+  .form {
+    margin: 60px 0;
+    max-width: 620px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    input, textarea {
+      color: #fff;
+      background-color: transparent;
+      border: 1px solid #fff;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      padding: 15px 15px;
+
+      &::-webkit-input-placeholder
+      {
+        color: #fff;
+      }
+    }
+
+    input {
+      width: 48%;
+
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 162px;
+    }
+
+  }
+
+  .list {
+    list-style: none;
+    display: flex;
+    justify-content: start;
+    li {
+      .icon {
+        -webkit-background-size: 50%;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 45px;
+        height: 45px;
+        display: block;
+        border: none;
+        margin-right: 10px;
+        padding: 0;
+      }
+      .icon-fb {
+        background-image: url("../img/icons/Facebook.png");
+        background-color: #345bb4;
+      }
+      .icon-dr {
+        background-image: url("../img/icons/Dribbble.png");
+        background-color: #e64895;
+      }
+      .icon-tw {
+        background-image: url("../img/icons/Twitter.png");
+        background-color: #00b4ff;
+      }
+    }
+  }
+}
+
+.grid-item-1,
+.grid-item-2,
+.grid-item-3,
+.grid-item-4,
+.grid-item-5,
+.grid-item-6,
+.grid-item-7 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 57px 54px 25px;
+}
+
+.grid-item-3,
+.grid-item-5,
+.grid-item-6,
+.grid-item-7 {
+  color: #fff;
+}
+
+.grid {
+  max-width: 1366px;
+  margin: 0 auto;
   display: grid;
-  grid-template-areas: "header header header"
-  "left main right"
-  "footer footer footer";
-  grid-template-columns: 200px 1fr 200px;
-  grid-template-rows: 150px auto 150px;
-  min-height: 100vh;
+  grid-template-columns: 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11%;
+  grid-template-areas: "a a a a a a b b b"
+                       "c c c c d d d d d"
+                       "c c c c e e e e e"
+                       "f f f g g g g g g";
 }
 
-@media screen and (max-width: 420px) {
-  .container {
-    grid-template-areas: "header" "left" "main" "right" "footer";
+@media screen and (max-width: 720px){
+  .grid {
+    .grid-item-1 {
+      display: none;
+    }
+    display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 100px 50px 1fr 50px 30px;
+    grid-template-areas: "a"
+                          "b"
+                         "c"
+                         "d"
+                         "e"
+                         "f"
+                         "g";
   }
 }
